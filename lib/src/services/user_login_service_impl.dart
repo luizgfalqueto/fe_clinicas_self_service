@@ -21,9 +21,9 @@ class UserLoginServiceImpl implements UserLoginService {
         return Left(ServiceException(message: 'Erro ao realizar login'));
       case Left(value: AuthUnauthorized()):
         return Left(ServiceException(message: 'Login e/ou senha inválidos'));
-      case Right(value: final accesToken):
+      case Right(value: final accessToken):
         final sp = await SharedPreferences.getInstance();
-        sp.setString(LocalStoragesConstants.accesToken, accesToken);
+        sp.setString(LocalStoragesConstants.accessToken, accessToken);
         return Right(unit);
     }
   }
