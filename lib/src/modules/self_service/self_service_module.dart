@@ -6,7 +6,7 @@ import 'package:fe_lab_clinicas_self_service/src/modules/self_service/find_patie
 import 'package:fe_lab_clinicas_self_service/src/modules/self_service/patient/patient_page.dart';
 import 'package:fe_lab_clinicas_self_service/src/modules/self_service/self_service_controller.dart';
 import 'package:fe_lab_clinicas_self_service/src/modules/self_service/self_service_page.dart';
-import 'package:fe_lab_clinicas_self_service/src/modules/self_service/who_i_am/who_i_am.dart';
+import 'package:fe_lab_clinicas_self_service/src/modules/self_service/who_i_am/who_i_am_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 
@@ -22,8 +22,8 @@ class SelfServiceModule extends FlutterGetItModule {
   @override
   Map<String, WidgetBuilder> get pages => {
         '/': (context) => const SelfServicePage(),
-        '/whoIAm': (context) => const WhoIAm(),
-        '/fin-patient': (context) => const FindPatient(),
+        '/whoIAm': (context) => const WhoIAmPage(),
+        '/find-patient': (context) => const FindPatient(),
         '/patient': (context) => const PatientPage(),
         '/documents': (context) => const DocumentsPage(),
         '/documents/scan': (context) => const DocumentsScanPage(),
