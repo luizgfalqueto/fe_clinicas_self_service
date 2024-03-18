@@ -17,6 +17,7 @@ enum FormSteps {
 class SelfServiceController with MessageStateMixin {
   final _step = ValueSignal(FormSteps.none);
   var _model = const SelfServiceModel();
+  SelfServiceModel get model => _model;
 
   FormSteps get step => _step();
 
@@ -24,8 +25,11 @@ class SelfServiceController with MessageStateMixin {
     _step.forceUpdate(FormSteps.whoIAm);
   }
 
-  void setWhoIAmDataStepAndNext (String name, String lastName) {
-    _model = _model.copyWith(name: () => name, lastName: () => lastName,);
+  void setWhoIAmDataStepAndNext(String name, String lastName) {
+    _model = _model.copyWith(
+      name: () => name,
+      lastName: () => lastName,
+    );
     _step.forceUpdate(FormSteps.findPatient);
   }
 
