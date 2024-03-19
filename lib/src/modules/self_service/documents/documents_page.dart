@@ -120,7 +120,8 @@ class _DocumentsPageState extends State<DocumentsPage> with MessageViewMixin {
                   height: 24,
                 ),
                 Visibility(
-                  visible: totalMedicalOrder > 0 && totalHealthInsuranceCard > 0,
+                  visible:
+                      totalMedicalOrder > 0 && totalHealthInsuranceCard > 0,
                   child: Row(
                     children: [
                       Expanded(
@@ -133,6 +134,7 @@ class _DocumentsPageState extends State<DocumentsPage> with MessageViewMixin {
                               fixedSize: const Size.fromHeight(48)),
                           onPressed: () {
                             selfServiceController.clearDocuments();
+                            setState(() {});
                           },
                           child: const Text('REMOVER TODAS'),
                         ),
